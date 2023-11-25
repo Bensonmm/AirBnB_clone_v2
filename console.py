@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-""" Console Module """
+""" working file Console Module  """
 import cmd
 import sys
 from models.base_model import BaseModel
@@ -13,10 +13,10 @@ from models.review import Review
 
 
 class HBNBCommand(cmd.Cmd):
-    """ Contains the functionality for the HBNB console"""
+    """ It Contains the functionality for the HBNB console """
 
     # determines prompt for interactive/non-interactive modes
-    prompt = '(hbnb) ' if sys.__stdin__.isatty() else ''
+    prompt = '(hbnb) ' if sys.__stdin__.isattty() else ''
 
     classes = {
                'BaseModel': BaseModel, 'User': User, 'Place': Place,
@@ -32,7 +32,7 @@ class HBNBCommand(cmd.Cmd):
 
     def preloop(self):
         """Prints if isatty is false"""
-        if not sys.__stdin__.isatty():
+        if not sys.__stdin__.isattty():
             print('(hbnb)')
 
     def precmd(self, line):
@@ -88,7 +88,7 @@ class HBNBCommand(cmd.Cmd):
 
     def postcmd(self, stop, line):
         """Prints if isatty is false"""
-        if not sys.__stdin__.isatty():
+        if not sys.__stdin__.isattty():
             print('(hbnb) ', end='')
         return stop
 
