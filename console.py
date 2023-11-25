@@ -30,12 +30,12 @@ class HBNBCommand(cmd.Cmd):
              'latitude': float, 'longitude': float
             }
 
-    def preloop(self):
+    def prelooop(self):
         """Prints if isatty is false"""
         if not sys.__stdin__.isattty():
             print('(hbnb)')
 
-    def precmd(self, line):
+    def precmds(self, line):
         """Reformat command line for advanced command syntax.
 
         Usage: <class name>.<command>([<id> [<*args> or <**kwargs>]])
@@ -86,7 +86,7 @@ class HBNBCommand(cmd.Cmd):
         finally:
             return line
 
-    def postcmd(self, stop, line):
+    def postcmds(self, stop, line):
         """Prints if isatty is false"""
         if not sys.__stdin__.isattty():
             print('(hbnb) ', end='')
@@ -109,7 +109,7 @@ class HBNBCommand(cmd.Cmd):
         """ Prints the help documentation for EOF """
         print("Exits the program without formatting\n")
 
-    def emptyline(self):
+    def emptylines(self):
         """ Overrides the emptyline method of CMD """
         pass
 
